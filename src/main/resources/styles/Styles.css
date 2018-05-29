@@ -1,0 +1,148 @@
+
+.root { -fx-selection-bar-text: #ffd353; }
+
+.txtField {
+    -fx-background-color: transparent ;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #bf4722;
+    -fx-text-fill: #ffd353;
+}
+
+.txtField:focused{
+    -fx-border-color: #ffd353;
+}
+
+.comboBox {
+    -fx-background-color: #bf4722;
+    -fx-text-fill: #ffd353;
+}
+
+.comboBox .list-cell {
+    -fx-text-fill: #ffd353;
+}
+
+.comboBox .arrow  {
+    -fx-cursor: text;
+    -fx-background-color: #ffd353;
+}
+
+.comboBox .combo-box-popup .list-view, .combo-box .combo-box-popup .list-cell {
+    -fx-background-color: #bf4722 ;
+    -fx-text-fill: #ffd353 ;
+}
+
+.comboBox .combo-box-popup .list-cell:hover {
+    -fx-background-color: #9a291e ;
+}
+
+
+
+.comboBox .increment-button ,.mylistview .decrement-button {
+    -fx-background-color:transparent;
+	-fx-background-radius: 2em;
+
+}
+
+.comboBox .scroll-bar:vertical {
+    -fx-background-color: #bf4722;
+}
+
+.comboBox .scroll-bar:horizontal .track,
+.comboBox .scroll-bar:vertical .track{
+	-fx-background-color: transparent;
+
+	-fx-background-radius: 2em;
+}
+
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.comboBox .scroll-bar:horizontal .thumb,
+.comboBox .scroll-bar:vertical .thumb {
+    -fx-background-color:#ffd353;
+	-fx-background-insets: 2, 0, 0;
+
+}
+
+.comboBox .scroll-bar:vertical .increment-button ,
+.comboBox .scroll-bar:vertical .decrement-button {
+   -fx-opacity: 0;
+}
+
+.tableView {
+    -fx-text-fill: #ffd353;
+}
+
+#tblView{
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffd353;
+    
+}
+
+#tblView .text {
+    -fx-text-fill: #ffd353;  
+
+}
+
+#tblView .column-header-background{
+    -fx-background-color: #b84416;
+    -fx-text-fill: #ffd353;  
+}
+
+#tblView .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffd353;  
+}
+
+.tableView .table-cell {
+    -fx-text-fill: #ffd353;
+}
+
+
+#tblView .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell{
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+    -fx-text-fill: #ffd353;  
+    -fx-background-color: transparent;
+     -fx-border-color: transparent;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-row-cell:odd{
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */  
+    -fx-text-fill: #ffd353;
+    -fx-background-color: transparent;
+     -fx-border-color: transparent;
+    -fx-table-cell-border-color: transparent;
+}
+.table-row-cell:odd .label {
+    -fx-text-fill: #ffd353;  
+}
+
+.table-row-cell .label {
+    -fx-text-fill: #ffd353;  
+}
+
+.table-row-cell .text {
+    -fx-text-fill: #ffd353;
+}
+
+
+.tableView .scroll-bar:horizontal {
+     -fx-opacity: 0;
+}
+
+.tableView *.scroll-bar:horizontal *.increment-button,
+.tableView *.scroll-bar:horizontal *.decrement-button {
+    -fx-opacity: 0;
+}
+
+.tableView *.scroll-bar:horizontal *.increment-arrow, 
+.tableView *.scroll-bar:horizontal *.decrement-arrow {
+    -fx-opacity: 0;
+    
+}
+

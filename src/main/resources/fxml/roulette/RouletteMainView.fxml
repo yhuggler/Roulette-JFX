@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="874.0" prefWidth="1573.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bbbaden.casino.controller.RouletteMainViewController">
+    <children>
+        <ImageView fitHeight="885.0" fitWidth="1579.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@../../images/popup_background.png" />
+            </image>
+        </ImageView>
+        <Label disable="true" layoutX="550.0" layoutY="40.0" style="-fx-opacity: 1;" text="Roulette" textFill="#ffd353">
+            <font>
+                <Font size="82.0" />
+            </font>
+        </Label>
+      
+        <Pane fx:id="draggablePane" layoutX="15.0" layoutY="18.0" prefHeight="153.0" prefWidth="1558.0">
+            <children>
+                <ImageView fitHeight="84.0" fitWidth="80.0" layoutX="1416.0" layoutY="44.0" onMouseClicked="#goBack" onMouseEntered="#highlightRoundButton" onMouseExited="#unHighlightRoundButton" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/btn_toolbar.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="84.0" fitWidth="80.0" layoutX="1325.0" layoutY="44.0" onMouseClicked="#minimize" onMouseEntered="#highlightRoundButton" onMouseExited="#unHighlightRoundButton" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/btn_toolbar.png" />
+                    </image>
+                </ImageView>
+                <Label disable="true" layoutX="1440.0" layoutY="19.0" prefHeight="119.0" prefWidth="44.0" style="-fx-opacity: 1;" text="x" textFill="#ffd454">
+                    <font>
+                        <Font size="56.0" />
+                    </font>
+                </Label>
+                <Label disable="true" layoutX="1349.0" layoutY="40.0" onMouseClicked="#minimize" prefHeight="38.0" prefWidth="29.0" style="-fx-opacity: 1;" text="-" textFill="#ffd454">
+                    <font>
+                        <Font size="68.0" />
+                    </font>
+                </Label>
+                <Label layoutX="33.0" layoutY="40.0" text="Balance" textFill="#ffd353">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+                <Label layoutX="33.0" layoutY="82.0" text="CHF" textFill="#ffd353">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblBalance" layoutX="112.0" layoutY="82.0" prefHeight="31.0" prefWidth="141.0" text="00.00" textFill="#ffd353">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+            <ImageView fitHeight="84.0" fitWidth="80.0" layoutX="1238.0" layoutY="44.0" onMouseClicked="#nextImage" onMouseEntered="#highlightRoundButton" onMouseExited="#unHighlightRoundButton" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/btn_toolbar.png" />
+               </image>
+            </ImageView>
+            <Label disable="true" layoutX="1263.0" layoutY="48.0" onMouseClicked="#minimize" prefHeight="38.0" prefWidth="29.0" style="-fx-opacity: 1;" text="?" textFill="#ffd454">
+               <font>
+                  <Font size="57.0" />
+               </font>
+            </Label>
+            </children>
+        </Pane>
+        <ImageView fx:id="imgViewRouletteWheel" fitHeight="500.0" fitWidth="500.0" layoutX="80.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../images/roulette/roulettewheel.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="imgViewPlay" disable="true" fitHeight="81.0" fitWidth="289.0" layoutX="1225.0" layoutY="737.0" onMouseEntered="#highlightSquareButton" onMouseExited="#unHighlightSquareButton" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.5;">
+            <image>
+                <Image url="@../../images/btn2.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="lblPlay" disable="true" layoutX="1329.0" layoutY="752.0" style="-fx-opacity: 0.5;" text="Play" textFill="#ffd353">
+            <font>
+                <Font size="41.0" />
+            </font>
+        </Label>
+        <ImageView disable="true" fitHeight="389.0" fitWidth="841.0" layoutX="674.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../images/roulette/rouletteboard.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="lbl1to18" alignment="CENTER" contentDisplay="CENTER" layoutX="741.0" layoutY="487.0" prefHeight="56.0" prefWidth="113.0" text="1-18" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblEven" alignment="CENTER" contentDisplay="CENTER" layoutX="853.0" layoutY="486.0" prefHeight="56.0" prefWidth="113.0" text="even" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblOdd" alignment="CENTER" contentDisplay="CENTER" layoutX="1190.0" layoutY="484.0" prefHeight="56.0" prefWidth="113.0" text="odd" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl19to36" alignment="CENTER" contentDisplay="CENTER" layoutX="1304.0" layoutY="486.0" prefHeight="56.0" prefWidth="113.0" text="19-36" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl1st12" alignment="CENTER" contentDisplay="CENTER" layoutX="739.0" layoutY="262.0" prefHeight="56.0" prefWidth="229.0" text="1st 12" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl2nd12" alignment="CENTER" contentDisplay="CENTER" layoutX="960.0" layoutY="263.0" prefHeight="56.0" prefWidth="229.0" text="2nd 12" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl3rd12" alignment="CENTER" contentDisplay="CENTER" layoutX="1191.0" layoutY="262.0" prefHeight="56.0" prefWidth="229.0" text="3rd 12" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl0" alignment="CENTER" contentDisplay="CENTER" layoutX="684.0" layoutY="316.0" prefHeight="172.0" prefWidth="60.0" text="0" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl2to1Row1" alignment="CENTER" contentDisplay="CENTER" layoutX="1420.0" layoutY="318.0" prefHeight="56.0" prefWidth="88.0" text="2-1" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl2to1Row2" alignment="CENTER" contentDisplay="CENTER" layoutX="1420.0" layoutY="376.0" prefHeight="56.0" prefWidth="88.0" text="2-1" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl2to1Row3" alignment="CENTER" contentDisplay="CENTER" layoutX="1418.0" layoutY="432.0" prefHeight="56.0" prefWidth="88.0" text="2-1" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblRed" alignment="CENTER" contentDisplay="CENTER" layoutX="968.0" layoutY="487.0" prefHeight="56.0" prefWidth="110.0" text="R" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblBlack" alignment="CENTER" contentDisplay="CENTER" layoutX="1080.0" layoutY="488.0" prefHeight="56.0" prefWidth="110.0" text="B" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="34.0" />
+            </font>
+        </Label>
+      <Label fx:id="lblBetAmount" alignment="CENTER" layoutX="1001.0" layoutY="747.0" prefHeight="61.0" prefWidth="186.0" text="0" textFill="#ffd353">
+         <font>
+            <Font size="49.0" />
+         </font>
+      </Label>
+      <Label layoutX="1035.0" layoutY="705.0" text="Bet amount" textFill="#ffd353">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="chip1" fitHeight="51.0" fitWidth="44.0" layoutX="628.0" layoutY="755.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/jetons/jeton1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chip5" fitHeight="51.0" fitWidth="44.0" layoutX="691.0" layoutY="755.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/jetons/jeton5.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chip10" fitHeight="51.0" fitWidth="44.0" layoutX="753.0" layoutY="755.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/jetons/jeton10.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chip50" fitHeight="51.0" fitWidth="44.0" layoutX="817.0" layoutY="755.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/jetons/jeton50.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chip100" fitHeight="51.0" fitWidth="44.0" layoutX="877.0" layoutY="755.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/jetons/jeton100.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="673.0" layoutY="705.0" text="Choose bet amount" textFill="#ffd353">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="728.0" layoutY="596.0" text="Drag chip onto  the desired numbers" textFill="#ffd353">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Pane fx:id="numberPane" layoutX="739.0" layoutY="317.0" prefHeight="170.0" prefWidth="685.0">
+         <children>
+              <Label fx:id="lbl3" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="56.0" prefWidth="56.0" text="3" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl6" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" prefHeight="56.0" prefWidth="56.0" text="6" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl9" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="1.0" prefHeight="56.0" prefWidth="56.0" text="9" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl12" alignment="CENTER" contentDisplay="CENTER" layoutX="171.0" prefHeight="56.0" prefWidth="56.0" text="12" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl2" alignment="CENTER" contentDisplay="CENTER" layoutY="57.0" prefHeight="56.0" prefWidth="56.0" text="2" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl5" alignment="CENTER" contentDisplay="CENTER" layoutX="56.0" layoutY="56.0" prefHeight="56.0" prefWidth="56.0" text="5" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl8" alignment="CENTER" contentDisplay="CENTER" layoutX="113.0" layoutY="57.0" prefHeight="56.0" prefWidth="56.0" text="8" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl11" alignment="CENTER" contentDisplay="CENTER" layoutX="170.0" layoutY="56.0" prefHeight="56.0" prefWidth="56.0" text="11" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl1" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="114.0" prefHeight="56.0" prefWidth="56.0" text="1" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl4" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="113.0" prefHeight="56.0" prefWidth="56.0" text="4" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl7" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="114.0" prefHeight="56.0" prefWidth="56.0" text="7" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl10" alignment="CENTER" contentDisplay="CENTER" layoutX="171.0" layoutY="113.0" prefHeight="56.0" prefWidth="56.0" text="10" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl15" alignment="CENTER" contentDisplay="CENTER" layoutX="226.0" layoutY="1.0" prefHeight="56.0" prefWidth="56.0" text="15" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl18" alignment="CENTER" contentDisplay="CENTER" layoutX="282.0" prefHeight="56.0" prefWidth="56.0" text="18" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl21" alignment="CENTER" contentDisplay="CENTER" layoutX="339.0" layoutY="1.0" prefHeight="56.0" prefWidth="56.0" text="21" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl24" alignment="CENTER" contentDisplay="CENTER" layoutX="396.0" prefHeight="56.0" prefWidth="56.0" text="24" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl14" alignment="CENTER" contentDisplay="CENTER" layoutX="225.0" layoutY="57.0" prefHeight="56.0" prefWidth="56.0" text="14" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl17" alignment="CENTER" contentDisplay="CENTER" layoutX="281.0" layoutY="56.0" prefHeight="56.0" prefWidth="56.0" text="17" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl20" alignment="CENTER" contentDisplay="CENTER" layoutX="338.0" layoutY="57.0" prefHeight="56.0" prefWidth="56.0" text="20" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl23" alignment="CENTER" contentDisplay="CENTER" layoutX="395.0" layoutY="56.0" prefHeight="56.0" prefWidth="56.0" text="23" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl13" alignment="CENTER" contentDisplay="CENTER" layoutX="226.0" layoutY="114.0" prefHeight="56.0" prefWidth="56.0" text="13" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl16" alignment="CENTER" contentDisplay="CENTER" layoutX="282.0" layoutY="113.0" prefHeight="56.0" prefWidth="56.0" text="16" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl19" alignment="CENTER" contentDisplay="CENTER" layoutX="339.0" layoutY="114.0" prefHeight="56.0" prefWidth="56.0" text="19" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl22" alignment="CENTER" contentDisplay="CENTER" layoutX="396.0" layoutY="113.0" prefHeight="56.0" prefWidth="56.0" text="22" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl27" alignment="CENTER" contentDisplay="CENTER" layoutX="452.0" layoutY="2.0" prefHeight="56.0" prefWidth="56.0" text="27" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl30" alignment="CENTER" contentDisplay="CENTER" layoutX="508.0" layoutY="1.0" prefHeight="56.0" prefWidth="56.0" text="30" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl33" alignment="CENTER" contentDisplay="CENTER" layoutX="565.0" layoutY="2.0" prefHeight="56.0" prefWidth="56.0" text="33" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl36" alignment="CENTER" contentDisplay="CENTER" layoutX="622.0" layoutY="1.0" prefHeight="56.0" prefWidth="56.0" text="36" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl26" alignment="CENTER" contentDisplay="CENTER" layoutX="451.0" layoutY="58.0" prefHeight="56.0" prefWidth="56.0" text="26" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl29" alignment="CENTER" contentDisplay="CENTER" layoutX="507.0" layoutY="57.0" prefHeight="56.0" prefWidth="56.0" text="29" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl32" alignment="CENTER" contentDisplay="CENTER" layoutX="564.0" layoutY="58.0" prefHeight="56.0" prefWidth="56.0" text="32" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl35" alignment="CENTER" contentDisplay="CENTER" layoutX="621.0" layoutY="57.0" prefHeight="56.0" prefWidth="56.0" text="35" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl25" alignment="CENTER" contentDisplay="CENTER" layoutX="452.0" layoutY="115.0" prefHeight="56.0" prefWidth="56.0" text="25" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl28" alignment="CENTER" contentDisplay="CENTER" layoutX="508.0" layoutY="114.0" prefHeight="56.0" prefWidth="56.0" text="28" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl31" alignment="CENTER" contentDisplay="CENTER" layoutX="565.0" layoutY="115.0" prefHeight="56.0" prefWidth="56.0" text="31" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+              <Label fx:id="lbl34" alignment="CENTER" contentDisplay="CENTER" layoutX="622.0" layoutY="114.0" prefHeight="56.0" prefWidth="56.0" text="34" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                      <Font size="34.0" />
+                  </font>
+              </Label>
+         </children>
+      </Pane>
+      <ImageView fx:id="imgViewBall" fitHeight="500.0" fitWidth="500.0" layoutX="80.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/roulette/ball.png" />
+         </image>
+      </ImageView>
+      <Ellipse fx:id="ellipseCover" fill="#238d23" layoutX="332.0" layoutY="497.0" radiusX="144.0" radiusY="134.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" visible="false" />
+      <Label fx:id="lblRandomNumber" alignment="CENTER" contentDisplay="CENTER" layoutX="141.0" layoutY="461.0" prefHeight="73.0" prefWidth="380.0" text="00" textAlignment="CENTER" textFill="#ffd353" visible="false">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imgViewRouletteWheelMid" fitHeight="500.0" fitWidth="500.0" layoutX="81.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/roulette/roulettewheel_mid.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="paneStreet1" layoutX="742.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
+      <Pane fx:id="paneStreet2" layoutX="798.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
+      <Pane fx:id="paneStreet3" layoutX="854.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
+      <Pane fx:id="paneStreet4" layoutX="910.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
+      <Pane fx:id="paneStreet5" layoutX="966.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
+      <Pane fx:id="paneStreet6" layoutX="1022.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
+      <Pane fx:id="paneStreet7" layoutX="1078.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
+      <Pane fx:id="paneStreet8" layoutX="1134.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
+      <Pane fx:id="paneStreet9" layoutX="1190.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
+      <Pane fx:id="paneStreet10" layoutX="1246.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
+      <Pane fx:id="paneStreet11" layoutX="1302.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
+      <Pane fx:id="paneStreet12" layoutX="1358.0" layoutY="458.0" prefHeight="61.0" prefWidth="56.0" />
+      <ImageView fx:id="imgViewTutorial" fitHeight="866.0" fitWidth="1558.0" onMouseClicked="#nextImage" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <image>
+            <Image url="@../../images/roulette/tutorial/1.png" />
+         </image></ImageView>
+      <Label layoutX="40.0" layoutY="192.0" text="Winnings" textFill="#ffd353">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblWinnings" layoutX="165.0" layoutY="192.0" text="0" textFill="#ffd353">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="56.0" fitWidth="80.0" layoutX="525.0" layoutY="749.0" onMouseClicked="#handleResetBetAmount" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/roulette/reset-button.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="51.0" fitWidth="53.0" layoutX="945.0" layoutY="754.0" onMouseClicked="#handleRevertLastAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/roulette/revert_button.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>
