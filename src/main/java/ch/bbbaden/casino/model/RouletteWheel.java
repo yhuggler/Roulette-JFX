@@ -1,18 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*  
+ *  © Copyright yannickhuggler.com
+ *
+ *  [Project Title]     Roulette
+ *  [Description]       The king of all casino-games implemented in JavaFX.
+ *  [Authors]           Yannick Huggler
+ *  [Version]           Version 1.0      
  */
+
 package ch.bbbaden.casino.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- *
- * @author yannick_huggler
- */
 public class RouletteWheel {
     
     List<Integer> wheelNumbers;

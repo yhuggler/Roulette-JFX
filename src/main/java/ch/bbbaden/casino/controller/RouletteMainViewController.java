@@ -1,16 +1,12 @@
 /*  
- *  © Copyright Gummybears
+ *  © Copyright yannickhuggler.com
  *
- *  [Project Title]     Casino-Application
- *  [Description]       An application with which you can play the most popular casino-games
- *                      including Blackjack, Roulette, Baccara, Bingo and Yatzy.
- *  [Authors]           Kim Strasser,
- *                      Philip Lackmann,
- *                      Patrick Dähler,
- *                      Jelle Schutter,
- *                      Yannick Huggler
- *  [Version]           1.0-SNAPSHOT        
+ *  [Project Title]     Roulette
+ *  [Description]       The king of all casino-games implemented in JavaFX.
+ *  [Authors]           Yannick Huggler
+ *  [Version]           Version 1.0      
  */
+
 package ch.bbbaden.casino.controller;
 
 import ch.bbbaden.casino.MainApp;
