@@ -24,6 +24,8 @@ The king of all casino-games implemented in JavaFX.
 * Inspiration
 * etc
 
+
+
 This application is licensed under GPL 3.0
 
 Yannick Huggler 2018
